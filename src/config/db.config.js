@@ -1,12 +1,10 @@
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-const dbpass = process.env.dbPass;
+const URI = process.env.dbUri;
 
 const connectDb = () => {
-  return mongoose.connect(
-    `mongodb+srv://delinuxist:${dbpass}@cluster0.3byoe.mongodb.net/Store-Api?retryWrites=true&w=majority`
-  );
+  return mongoose.connect(URI);
 };
 
 module.exports = connectDb;
